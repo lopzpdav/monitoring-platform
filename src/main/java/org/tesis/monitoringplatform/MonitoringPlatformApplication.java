@@ -8,6 +8,10 @@ public class MonitoringPlatformApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MonitoringPlatformApplication.class, args);
+
+		System.out.println("Testing commits");
 	}
+
+
 
 }
