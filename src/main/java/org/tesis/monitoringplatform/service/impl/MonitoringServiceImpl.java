@@ -1,6 +1,7 @@
 package org.tesis.monitoringplatform.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.tesis.monitoringplatform.domain.DataPollution;
 import org.tesis.monitoringplatform.domain.MetadataPollution;
@@ -12,13 +13,14 @@ import reactor.core.publisher.Mono;
 
 import java.util.Date;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class MonitoringServiceImpl implements MonitoringService {
     private final PollutionRepository pollutionRepository;
 
     @Override
-    public Mono<Void> procesarInfo(SensorInfoDTO sensorInfo) {
+    public Mono<Pollution> procesarInfo(SensorInfoDTO sensorInfo) {
         MetadataPollution metadataPollution = MetadataPollution.builder()
                 .sensor_id(sensorInfo.getMetadata().getSensor_id())
                 .location(sensorInfo.getMetadata().getLocation())
@@ -39,6 +41,8 @@ public class MonitoringServiceImpl implements MonitoringService {
                 .data(dataPollution)
                 .build();
 
-        return pollutionRepository.save(pollution);
+        log.info("Document to save -> " + pollution);
+
+        return pollutionRepository.insert(pollution);
     }
 }

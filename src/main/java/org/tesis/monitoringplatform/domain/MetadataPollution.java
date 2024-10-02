@@ -1,9 +1,6 @@
 package org.tesis.monitoringplatform.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -11,6 +8,7 @@ import java.util.Map;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Builder
 public class MetadataPollution implements Serializable {
     private String sensor_id;
