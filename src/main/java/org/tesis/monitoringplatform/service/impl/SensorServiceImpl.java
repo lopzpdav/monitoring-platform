@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.tesis.monitoringplatform.domain.sensor.Sensor;
 import org.tesis.monitoringplatform.domain.sensor.SensorData;
 import org.tesis.monitoringplatform.domain.sensor.SensorMetadata;
-import org.tesis.monitoringplatform.dto.SensorInfoDTO;
+import org.tesis.monitoringplatform.dto.sensor.SensorInfoDTO;
 import org.tesis.monitoringplatform.repository.SensorRepository;
 import org.tesis.monitoringplatform.service.SensorService;
 import reactor.core.publisher.Mono;

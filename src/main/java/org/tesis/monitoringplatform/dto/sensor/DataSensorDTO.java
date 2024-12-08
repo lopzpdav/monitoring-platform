@@ -1,4 +1,4 @@
-package org.tesis.monitoringplatform.dto;
+package org.tesis.monitoringplatform.dto.sensor;
 
 import jakarta.validation.constraints.NotNull;
 
