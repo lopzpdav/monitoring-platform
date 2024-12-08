@@ -1,2 +1,2 @@
 # monitoring-platform
-Monitoring platform for air pollution
+Monitoring platform for air sensor

@@ -1,4 +1,4 @@
-package org.tesis.monitoringplatform.controller;
+package org.tesis.monitoringplatform.controllers;
 
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
@@ -10,23 +10,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.tesis.monitoringplatform.domain.Pollution;
+import org.tesis.monitoringplatform.domain.sensor.Sensor;
 import org.tesis.monitoringplatform.dto.SensorInfoDTO;
-import org.tesis.monitoringplatform.service.MonitoringService;
+import org.tesis.monitoringplatform.service.SensorService;
 import reactor.core.publisher.Mono;
 
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/monitoring")
-public class MonitoringController {
-    private final MonitoringService monitoringService;
+@RequestMapping("api/v1/sensor")
+public class SensorController {
+    private final SensorService sensorService;
 
-    @PostMapping("/info")
+    @PostMapping("/data")
     @Operation(summary = "Save sensor's received info", description = "Endpoint para guardar informacion recibida de los sensores")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<Pollution> saveStudent (@Validated @RequestBody SensorInfoDTO request){
-        return monitoringService.procesarInfo(request);
+    public Mono<Sensor> saveSensorData (@Validated @RequestBody SensorInfoDTO request){
+        return sensorService.processData(request);
     }
 
     /**

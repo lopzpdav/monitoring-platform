@@ -1,21 +1,12 @@
 package org.tesis.monitoringplatform.dto;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import org.tesis.monitoringplatform.enums.SensorDataType;
 
 import java.util.Map;
 
-@Builder
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
-public class MetadataSensorDTO {
-    @NotNull(message = "Field must not be null")
-    private String sensor_id;
-
-    @NotNull(message = "Field must not be null")
-    private Map<String, Double> location;
+public record MetadataSensorDTO(
+        @NotNull(message = "Field must not be null") SensorDataType sensorDataType,
+        @NotNull(message = "Field must not be null") Map<String, Double> location
+) {
 }
