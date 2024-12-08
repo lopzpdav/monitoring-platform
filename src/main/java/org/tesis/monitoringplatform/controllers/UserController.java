@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.tesis.monitoringplatform.domain.user.User;
 import org.tesis.monitoringplatform.dto.user.UserInfoDTO;
 import org.tesis.monitoringplatform.service.UserService;
 import reactor.core.publisher.Mono;
